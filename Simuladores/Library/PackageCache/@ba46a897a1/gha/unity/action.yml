@@ -1,0 +1,76 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: 'Unity Setup'
+inputs:
+  version:
+    required: true
+  platforms:
+    required: false
+  username:
+    required: false
+  password:
+    required: false
+  serial_ids:
+    required: false
+  release_license:
+    required: false
+
+runs:
+  using: 'composite'
+  steps:
+    - id: configs
+      shell: bash
+      run: |
+        if [[ "${{ inputs.release_license }}" != "" ]]; then 
+          echo "release_license=True" >> $GITHUB_OUTPUT
+        else
+          echo "install_unity=True" >> $GITHUB_OUTPUT
+          if [[ "${{ inputs.username }}" != "" && "${{ inputs.password }}" != "" && "${{ inputs.serial_ids }}" != "" ]]; then 
+            echo "activate_license=True" >> $GITHUB_OUTPUT
+          fi
+        fi
+    - name: Return Unity license
+      if: steps.configs.outputs.release_license
+      uses: nick-invision/retry@v2
+      with:
+        timeout_minutes: 5
+        max_attempts: 2
+        shell: bash
+        command: |
+          python $GITHUB_ACTION_PATH/unity_installer.py --release_license \
+            --version ${{ inputs.version }} \
+            --logfile "testapps/release_license.log"
+          cat testapps/release_license.log
+    - name: Install Unity
+      if: steps.configs.outputs.install_unity
+      shell: bash
+      run: |
+        if [[ -n "${{ inputs.platforms }}" ]]; then
+          additional_flags+=(--platforms ${{ inputs.platforms }})
+        fi
+        unity_info=$(python $GITHUB_ACTION_PATH/unity_installer.py --install --version ${{ inputs.version }} ${additional_flags[*]})
+        echo "UNITY_VERSION=$(cut -d',' -f1 <<< ${unity_info})" >> $GITHUB_ENV
+        echo "UNITY_ROOT_DIR=$(cut -d',' -f2 <<< ${unity_info})" >> $GITHUB_ENV
+    - name: Activate Unity license
+      if: steps.configs.outputs.activate_license
+      shell: bash
+      run: |
+        python $GITHUB_ACTION_PATH/unity_installer.py --activate_license \
+          --version ${{ inputs.version }}  \
+          --username "${{ inputs.username }}" \
+          --password "${{ inputs.password }}" \
+          --serial_ids "${{ inputs.serial_ids }}" \
+          --logfile "testapps/activate_license.log"
+        cat testapps/activate_license.log

@@ -1,0 +1,307 @@
+# Workflow to handle packaging the Unity SDK
+name: Package SDKs (SubWorkflow)
+
+on:
+  workflow_call:
+    inputs:
+      runIntegrationTests:
+        description: 'run integration tests?'
+        default: '1'
+        required: true
+        type: string
+      create_new_branch:
+        description: 'Check if we need to create new branch to package guids update. If working_branch set, will ignore this value. '
+        default: '0'
+        required: false
+        type: string
+      working_branch:
+        description: 'If already a working in progress release branch'
+        required: false
+        type: string
+      release_label:
+        description: 'If the package is intended to run for a release, put <version>-RC## for label'
+        required: false
+        type: string
+      build_run_id:
+        description: 'run id for build_starter.yml, search for all output'
+        required: false
+        type: string
+      platforms:
+        description: 'CSV of Android,iOS,Windows,macOS,Linux,Playmode'
+        default: 'Android,iOS,Windows,macOS,Linux,Playmode'
+        required: true
+        type: string
+      apis:
+        description: 'CSV of apis to build and test'
+        default: 'analytics,app_check,auth,crashlytics,database,dynamic_links,firestore,functions,installations,messaging,remote_config,storage'
+        required: true
+        type: string
+
+
+env:
+  # Use SHA256 for hashing files.
+  hashCommand: "sha256sum"
+  default_apis: 'analytics,app_check,auth,crashlytics,database,dynamic_links,firestore,functions,installations,messaging,remote_config,storage'
+
+jobs:
+  package_sdks:
+    name: package-${{github.event.inputs.release_label}}
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Check input
+        # This check the apis input. It detect whether the package is only asking for subset of
+        # of the products, like auth,firestore only etc. If the input apis are less than the
+        # default_apis env attribute, we package only the provided apis, for test purposes only.
+        id: check-input
+        shell: bash
+        run: |
+          IFS=',' read -r -a input_apis <<< "${{ inputs.apis }}"
+          IFS=',' read -r -a default_apis <<< "${{ env.default_apis }}"
+          if [[ ${#input_apis[@]} != ${#default_apis[@]} ]]; then
+            echo "package_for_checks=1" >> $GITHUB_OUTPUT
+            echo "package_apis='--apis=${{ inputs.apis }}'" >> $GITHUB_OUTPUT
+          else
+            echo "package_for_checks=0" >> $GITHUB_OUTPUT
+            echo "package_apis=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Print inputs
+        shell: bash
+        run: |
+          echo runIntegrationTests: ${{ inputs.runIntegrationTests }}
+          echo create_new_branch: ${{ inputs.create_new_branch }}
+          echo release_label: ${{ inputs.release_label }}
+          echo working_branch: ${{ inputs.working_branch }}
+          echo download_android_run: ${{ inputs.download_android_run }}
+          echo download_ios_run: ${{ inputs.download_ios_run }}
+          echo download_linux_run: ${{ inputs.download_linux_run }}
+          echo download_macos_run: ${{ inputs.download_macos_run }}
+          echo download_windows_run: ${{ inputs.download_windows_run }}
+          echo platforms: ${{ inputs.platforms }}"
+          echo apis: ${{ inputs.apis }}"
+          echo is the package for checks: ${{ steps.check-input.outputs.package_for_checks }}
+          echo package_apis: ${{ steps.check-input.outputs.package_apis }}
+
+      - name: Check out base branch
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ inputs.working_branch }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Install python deps
+        shell: bash
+        run: |
+          pip install -r scripts/gha/requirements.txt
+
+      - name: Generate token for GitHub API
+        # This step is necessary because the existing GITHUB_TOKEN cannot be used inside one workflow to trigger another.
+        # 
+        # Instead, generate a new token here, using our GitHub App's private key and App ID (saved as Secrets).
+        # 
+        # This method is preferred over the "personal access token" solution, as the GitHub App's scope is limited to just
+        # the firebase-cpp-sdk repository.
+        uses: tibdex/github-app-token@v1
+        id: generate-token
+        with:
+          app_id: ${{ secrets.WORKFLOW_TRIGGER_APP_ID }}
+          private_key: ${{ secrets.WORKFLOW_TRIGGER_APP_PRIVATE_KEY }}
+
+      - name: Name new branch
+        if: inputs.working_branch == '' && inputs.create_new_branch == '1'
+        run: |
+          date_str=$(date "+%Y%m%d-%H%M%S")
+          echo "NEW_BRANCH=new_branch-${date_str}" >> $GITHUB_ENV
+
+      - name: Create new branch
+        if: inputs.working_branch == '' && inputs.create_new_branch == '1'
+        run: |
+          git remote update
+          git checkout -b "${NEW_BRANCH}"
+          echo "UPDATE_LOGFILE=update_log.txt" >> $GITHUB_ENV
+
+      - name: Checkout working branch
+        if: inputs.working_branch != ''
+        run: |
+          git remote update
+          git checkout ${{ inputs.working_branch }}
+          echo "UPDATE_LOGFILE=update_log.txt" >> $GITHUB_ENV
+          echo "NEW_BRANCH=${{ inputs.working_branch }}" >> $GITHUB_ENV
+
+      # If called by build_start.xml, ignore name search, just grab all artifact exists
+      - name: Fetch All in build_starter
+        uses: actions/download-artifact@v4
+        with:
+          path: built_artifact
+      
+      - name: move zip files
+        run: |
+          cd built_artifact
+          find . -type f \( -name "*.zip" ! -name "documentation_sources*" \) -exec mv {} . \;
+          find . -empty -type d -delete
+          ls -lR
+          for zip_file in *.zip
+          do
+            unzip -l $zip_file
+          done
+          ls -lR
+          cd ..
+
+      - name: Package unitypackage
+        run: |
+          python scripts/build_scripts/build_package.py --zip_dir=built_artifact ${{ steps.check-input.outputs.package_apis }}
+
+      - name: Commit Changes if there is any
+        if: inputs.working_branch != '' || inputs.create_new_branch == '1'
+        run: |
+          if ! git update-index --refresh; then
+            git config user.email "firebase-workflow-trigger-bot@google.com"
+            git config user.name "firebase-workflow-trigger-bot"
+            git config core.commentChar "%"  # so we can use # in git commit messages
+            git commit -a -m "Update Guids ID"
+
+            # Show changes in git log
+            git diff
+            # Push branch
+            git push --set-upstream origin "${NEW_BRANCH}"
+          fi
+
+      - name: Create PR if there is None
+        if: inputs.working_branch != '' || inputs.create_new_branch == '1'
+        id: push-branch
+        run: |
+          if ! git update-index --refresh; then
+            date_str=$(date "+%a %b %d %Y")
+            commit_title="Update Unity SDK dependencies - ${date_str}"
+            commit_body=
+            if [[ -n '${{ github.event.inputs.comment }}' ]]; then
+              # If a comment was provided, start with that instead of blank.
+              commit_body='${{ github.event.inputs.comment }}
+
+            '
+            fi
+
+            commit_body="${commit_body}
+
+          > Created by [${{github.workflow}} workflow]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)."
+            git config user.email "firebase-workflow-trigger-bot@google.com"
+            git config user.name "firebase-workflow-trigger-bot"
+            git config core.commentChar "%"  # so we can use # in git commit messages
+            git commit -a -m "${commit_title}
+
+          ${commit_body}"
+            echo "branch_pushed=1" >> $GITHUB_OUTPUT
+            # Show changes in git log
+            git diff
+            # Push branch
+            git push --set-upstream origin "${NEW_BRANCH}"
+            # Create pull request
+            pr_number=$(python scripts/gha/create_pull_request.py --token ${{ steps.generate-token.outputs.token }} --head "${NEW_BRANCH}" --base "${{ github.event.inputs.baseBranch }}" --title "${commit_title}" --body "${commit_body}")
+            echo "created_pr_number=${pr_number}" >> $GITHUB_OUTPUT
+          else
+            echo "::warning ::No changes detected, won't create pull request."
+            echo "branch_pushed=0" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Zip File
+        run: |
+          mv output firebase_unity_sdk
+          cp docs/readme.md firebase_unity_sdk/.
+          cp LICENSE firebase_unity_sdk/.
+          ls -Rl firebase_unity_sdk
+          zip -r firebase_unity_sdk.zip firebase_unity_sdk
+
+      - name: compute SDK hash
+        shell: bash
+        run: |
+          ${{ env.hashCommand }} --tag firebase_unity_sdk.zip >> firebase_unity_sdk_hash.txt
+          echo "::warning ::$(cat firebase_unity_sdk_hash.txt)"
+
+      - name: Upload Build unitypackage
+        uses: actions/upload-artifact@v4
+        with:
+          name: firebase_unity_sdk.zip
+          path: firebase_unity_sdk.zip
+      
+      - name: Package tgz
+        if: ${{ steps.check-input.outputs.package_for_checks }} == '1'
+        run: |
+          python scripts/build_scripts/build_package.py --zip_dir=built_artifact --output_upm=True --output=output_tgz
+
+      - name: Listing output tgz
+        if: ${{ steps.check-input.outputs.package_for_checks }} == '1'
+        run: |
+          ls -Rl
+        working-directory: output_tgz
+
+      - name: compute SDK hash for tgz files
+        if: ${{ steps.check-input.outputs.package_for_checks }} == '1'
+        shell: bash
+        run: |
+          tgz_files_list=$(find -type f -name '*.tgz')
+          for tgz_file in "${tgz_files_list[@]}"; do
+            ${{ env.hashCommand }} --tag ${tgz_file} >> ../firebase_unity_sdk_hash.txt
+          done
+          echo "::warning update sha txt \n ::$(cat ../firebase_unity_sdk_hash.txt)"
+        working-directory: output_tgz
+
+      - name: Upload Build tgz
+        if: ${{ steps.check-input.outputs.package_for_checks }} == '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: firebase_unity_sdk_tgz
+          path: output_tgz
+
+      - name: upload hash
+        uses: actions/upload-artifact@v4
+        with:
+          name: firebase_unity_sdk_hash.txt
+          path: firebase_unity_sdk_hash.txt
+
+  trigger_integration_tests:
+    # Trigger the integration_tests workflow.
+    needs: [package_sdks]
+    if: (inputs.runIntegrationTests != '0') && !cancelled() && !failure()
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.8
+    - name: Generate token for GitHub API
+      # This step is necessary because the existing GITHUB_TOKEN cannot be used inside one workflow to trigger another.
+      # 
+      # Instead, generate a new token here, using our GitHub App's private key and App ID (saved as Secrets).
+      # 
+      # This method is preferred over the "personal access token" solution, as the GitHub App's scope is limited to just
+      # the firebase-cpp-sdk repository.
+      uses: tibdex/github-app-token@v1
+      id: generate-token
+      with:
+        app_id: ${{ secrets.WORKFLOW_TRIGGER_APP_ID }}
+        private_key: ${{ secrets.WORKFLOW_TRIGGER_APP_PRIVATE_KEY }}
+    - name: Get branch name
+      id: branch-name
+      uses: tj-actions/branch-names@v7.0.7
+    - name: Use GitHub API to start workflow
+      shell: bash
+      run: |
+        pip install -r scripts/gha/requirements.txt
+        set -e
+        python scripts/gha/trigger_workflow.py -t ${{ steps.generate-token.outputs.token }} \
+          -b ${{ steps.branch-name.outputs.current_branch }} \
+          -w integration_tests.yml \
+          -p packaged_sdk_run_id ${{ github.run_id }} \
+          -p platforms ${{ inputs.platforms }} \
+          -p apis ${{ inputs.apis }} \
+          -p test_pull_request ${{ inputs.runIntegrationTests }} \
+          -s 10 -A -v

@@ -1,0 +1,186 @@
+# Workflow to handle packaging the Unity SDK
+name: Update Versions
+
+on:
+  workflow_call:
+    inputs:
+      triggered_by_callable:
+        description: 'Check if this package grabs artifacts from new build workflow'
+        default: false
+        required: true
+        type: boolean
+      base_branch:
+        description: 'create the new branch from this base'
+        default: 'main'
+        type: string
+        required: true
+      package_version_number:
+        description: "The Unity SDK version to upgrade to"
+        default: 8.6.0
+        type: string
+        required: true
+      cpp_release_version:
+        description: "The CPP SDK version to update against"
+        default: 9.1.0
+        type: string
+        required: true
+    outputs:
+      new_branch:
+        description: "The branch update version created"
+        value: ${{ jobs.update_versions.outputs.new_branch }}
+
+  workflow_dispatch:
+    inputs:
+      base_branch:
+        description: 'create the new branch from this base'
+        default: 'main'
+        required: true
+      package_version_number:
+        description: "The Unity SDK version to upgrade to"
+        default: 9.1.0
+        required: true
+      cpp_release_version:
+        description: "The CPP SDK version to update against"
+        default: 9.1.0
+        required: true
+
+jobs:
+  update_versions:
+    name: update-version
+    outputs:
+      new_branch: ${{ steps.decide-output.outputs.new_branch }}
+      cpp_release_version: ${{ steps.decide_input.outputs.cpp_release_version }}
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Decide inputs
+        id: decide_input
+        shell: bash
+        run: |
+          if [[ "${{ inputs.triggered_by_callable }}" == "true" ]]; then
+            # Triggered by callable
+            if [[ "${{ inputs.base_branch }}" == "" ]]; then
+              echo "base_branch=${{ github.ref }}" >> $GITHUB_OUTPUT
+            else
+              echo "base_branch=${{ inputs.base_branch }}" >> $GITHUB_OUTPUT
+            fi
+            
+            echo "package_version_number=${{ inputs.package_version_number }}" >> $GITHUB_OUTPUT
+            echo "cpp_release_version=${{ inputs.cpp_release_version }}" >> $GITHUB_OUTPUT
+          else
+            if [[ "${{ github.event.inputs.base_branch }}" == "" ]]; then
+              echo "base_branch=${{ github.ref }}" >> $GITHUB_OUTPUT
+            else
+              echo "base_branch=${{ github.event.inputs.base_branch }}" >> $GITHUB_OUTPUT
+            fi
+            echo "base_branch=${{ github.event.inputs.base_branch }}" >> $GITHUB_OUTPUT
+            echo "package_version_number=${{ github.event.inputs.package_version_number }}" >> $GITHUB_OUTPUT
+            echo "cpp_release_version=${{ github.event.inputs.cpp_release_version }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Print inputs
+        shell: bash
+        run: |
+          echo triggered_by_callable: ${{ inputs.triggered_by_callable }}
+          echo base_branch: ${{ steps.decide_input.outputs.base_branch }}
+          echo package_version_number: ${{ steps.decide_input.outputs.package_version_number }}
+          echo cpp_release_version: ${{ steps.decide_input.outputs.cpp_release_version }}
+
+      - name: Check out base branch
+        uses: actions/checkout@v3
+        with:
+          path: firebase-unity-sdk
+          fetch-depth: 0
+      
+      - name: Checkout CPP Repo
+        uses: actions/checkout@v3
+        with:
+          repository: firebase/firebase-cpp-sdk
+          path: firebase-cpp-sdk
+          submodules: true
+      
+      - name: Get token for creating PR 
+        uses: tibdex/github-app-token@v1
+        id: generate-pr-token
+        with:
+          app_id: ${{ secrets.WORKFLOW_TRIGGER_APP_ID }}
+          private_key: ${{ secrets.WORKFLOW_TRIGGER_APP_PRIVATE_KEY }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Install python deps
+        shell: bash
+        run: |
+          cd firebase-unity-sdk
+          pip install -r scripts/gha/requirements.txt
+
+      - name: Name new branch
+        id: name-branch
+        run: |
+          date_str=$(date "+%Y%m%d-%H%M%S")
+          new_branch=release-${{ steps.decide_input.outputs.package_version_number }}-${date_str}
+          echo "NEW_BRANCH=${new_branch}" >> $GITHUB_ENV
+          echo "new_branch=${new_branch}" >> $GITHUB_OUTPUT
+
+      - name: Create new branch
+        run: |
+          cd firebase-unity-sdk
+          git remote update
+          git checkout -b "${NEW_BRANCH}"
+          echo "UPDATE_LOGFILE=update_log.txt" >> $GITHUB_ENV
+
+      - name: Update Unity SDK version and dependencies
+        run: |
+          cd firebase-unity-sdk
+          python scripts/update_versions.py --unity_sdk_version=${{ steps.decide_input.outputs.package_version_number }}
+
+      - name: Push branch if there are changes
+        id: push-branch
+        run: |
+          cd firebase-unity-sdk
+          if ! git update-index --refresh; then
+            date_str=$(date "+%a %b %d %Y")
+            commit_title="Update Unity SDK dependencies - ${date_str}"
+            commit_body=
+            if [[ -n '${{ github.event.inputs.comment }}' ]]; then
+              # If a comment was provided, start with that instead of blank.
+              commit_body='${{ github.event.inputs.comment }}
+
+            '
+            fi
+
+            commit_body="${commit_body}
+
+          > Created by [${{github.workflow}} workflow]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)."
+            git config user.email "firebase-workflow-trigger-bot@google.com"
+            git config user.name "firebase-workflow-trigger-bot"
+            git config core.commentChar "%"  # so we can use # in git commit messages
+            git commit -a -m "${commit_title}
+
+          ${commit_body}"
+            echo "branch_pushed=1" >> $GITHUB_OUTPUT
+            # Show changes in git log
+            git diff
+            # Push branch
+            git push --set-upstream origin "${NEW_BRANCH}"
+            # Create pull request
+            pr_number=$(python scripts/gha/create_pull_request.py --token ${{ steps.generate-pr-token.outputs.token }} --head "${NEW_BRANCH}" --base "${{ steps.decide_input.outputs.base_branch }}" --title "${commit_title}" --body "${commit_body}")
+            echo "created_pr_number=${pr_number}" >> $GITHUB_OUTPUT
+          else
+            echo "::warning ::No changes detected, won't create pull request."
+            echo "branch_pushed=0" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Decide output
+        id: decide-output
+        run: |
+          if [[ "${{ steps.push-branch.outputs.branch_pushed }}" == "1" ]]; then
+            # Triggered by callable
+            echo "new_branch=${{ steps.name-branch.outputs.new_branch }}" >> $GITHUB_OUTPUT
+          else
+            echo "new_branch=" >> $GITHUB_OUTPUT
+          fi

@@ -1,0 +1,115 @@
+# Workflow to handle building the Unity SDK on iOS
+name: Build iOS (SubWorkflow)
+
+on:
+  workflow_call:
+    inputs:
+      unity_version:
+        description: 'Unity version'
+        default: '2021'
+        required: true
+        type: string
+      firebase_cpp_sdk_version:
+        description: 'Firebase CPP SDK version to build against (The branch, tag or SHA to checkout)'
+        default: ''
+        required: false
+        type: string
+      unity_branch:
+        description: 'Unity branch to build against, empty means current branch'
+        default: ''
+        type: string
+      apis:
+        description: 'CSV of apis to build and test'
+        default: 'analytics,app_check,auth,crashlytics,database,dynamic_links,firestore,functions,installations,messaging,remote_config,storage'
+        required: true
+        type: string
+      unity_platform_name:
+        description: 'The platform name Unity should install with'
+        default: ''
+        required: true
+        type: string
+      # Additional CMake flags to use
+      additional_cmake_flags:
+        description: 'Additional flags to pass into CMake'
+        default: ''
+        required: false
+        type: string
+
+jobs:
+  build_ios:
+    name: build-ios-unity${{ inputs.unity_version }}-CPP${{ inputs.firebase_cpp_sdk_version }}
+    runs-on: macos-13
+    strategy:
+      fail-fast: false
+
+    env:
+      xcodeVersion: "15.1"
+  
+    steps:
+      - name: Checkout Unity Repo
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          ref: ${{ inputs.unity_branch }}
+          fetch-depth: 0
+          
+      - name: Checkout CPP Repo
+        uses: actions/checkout@v3
+        with:
+          repository: firebase/firebase-cpp-sdk
+          path: firebase-cpp-sdk
+          ref: ${{ inputs.firebase_cpp_sdk_version }}
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: setup Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_${{ env.xcodeVersion }}.app/Contents/Developer
+
+      - name: Install prerequisites
+        shell: bash
+        run: |
+          echo "FIREBASE_CPP_SDK_DIR=${{ github.workspace }}/firebase-cpp-sdk" >> $GITHUB_ENV
+          cd firebase-cpp-sdk
+          python scripts/gha/install_prereqs_desktop.py
+          cd ..
+          brew install swig
+
+      - name: Install python deps
+        shell: bash
+        run: |
+          pip install -r scripts/gha/requirements.txt
+      
+      - id: unity_setup
+        uses: ./gha/unity
+        timeout-minutes: 30
+        with:
+          version: ${{ inputs.unity_version }}
+          platforms: ${{ inputs.unity_platform_name }}
+
+      - name: Build SDK (iOS)
+        timeout-minutes: 90
+        shell: bash
+        run: |
+          # TODO add handling cmake_extras
+          python scripts/build_scripts/build_zips.py --gha --platform=ios --unity_root=$UNITY_ROOT_DIR --apis=${{ inputs.apis }}
+
+      - name: Check zip file
+        shell: bash
+        run: |
+          if [ -f ios_unity/*.zip ]; then
+            echo "ios_unity zip created."
+          else
+            echo "Fail to create ios_unity zip."
+            exit 1
+          fi
+
+      - name: Upload Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios_unity
+          path: ios_unity/*.zip

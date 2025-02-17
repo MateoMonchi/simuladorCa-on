@@ -1,0 +1,138 @@
+# Workflow to handle building the Unity SDK on macOS
+name: Build macOS (SubWorkflow)
+
+on:
+  workflow_call:
+    inputs:
+      unity_version:
+        description: 'Unity version'
+        default: '2021'
+        required: true
+        type: string
+      firebase_cpp_sdk_version:
+        description: 'Firebase CPP SDK version to build against (The branch, tag or SHA to checkout)'
+        default: ''
+        required: false
+        type: string
+      unity_branch:
+        description: 'Unity branch to build against, empty means current branch'
+        default: ''
+        type: string
+      apis:
+        description: 'CSV of apis to build and test'
+        default: 'analytics,app_check,auth,crashlytics,database,dynamic_links,firestore,functions,installations,messaging,remote_config,storage'
+        required: true
+        type: string
+      unity_platform_name:
+        description: 'The platform name Unity should install with'
+        default: ''
+        required: true
+        type: string
+      # Additional CMake flags to use
+      additional_cmake_flags:
+        description: 'Additional flags to pass into CMake'
+        default: ''
+        required: false
+        type: string
+
+jobs:
+  build_desktop:
+    name: build-macOS-unity${{ inputs.unity_version}}-CPP${{ inputs.firebase_cpp_sdk_version }}
+    runs-on: macos-13
+    strategy:
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          ref: ${{ inputs.unity_branch }}
+          fetch-depth: 0
+
+      - uses: actions/checkout@v3
+        with:
+          repository: firebase/firebase-cpp-sdk
+          path: firebase-cpp-sdk
+          submodules: true
+          ref: ${{ inputs.firebase_cpp_sdk_version }}
+          fetch-depth: 0
+
+      # Remove other python installs before installing the version we want
+      - name: Remove other pythons
+        shell: bash
+        run: |
+          ls -l /usr/local/bin | grep /Library/Frameworks/Python.framework/Versions/3 | awk '{print "sudo rm \47/usr/local/bin/" $9 "\47"}'
+          ls -d /Library/Frameworks/Python.framework/Versions/3.* 2> /dev/null | awk '{print "sudo rm -rf \47" $0 "\47"}'
+          ls -d /Applications/Python\ 3.* 2> /dev/null | awk '{print "sudo rm -rf \47" $0 "\47"}'
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Add msbuild to PATH (windows)
+        if: startsWith(matrix.os, 'windows')
+        uses: microsoft/setup-msbuild@v1.1
+
+      - name: Install prerequisites
+        shell: bash
+        run: |
+          echo "FIREBASE_CPP_SDK_DIR=${{ github.workspace }}/firebase-cpp-sdk" >> $GITHUB_ENV
+          cd firebase-cpp-sdk
+          python scripts/gha/install_prereqs_desktop.py
+          cd ..
+          brew install swig
+
+      - name: Install python deps
+        shell: bash
+        run: |
+          pip install -r scripts/gha/requirements.txt
+
+      - name: Install OpenSSL (macOS)
+        run: |
+          brew install openssl
+          # brew won't overwrite MacOS system default OpenSSL, so force it here.
+          echo "OPENSSL_ROOT_DIR=$(brew --prefix openssl --installed)" >> $GITHUB_ENV
+
+      - id: unity_setup
+        uses: ./gha/unity
+        timeout-minutes: 30
+        with:
+          version: ${{ inputs.unity_version }}
+          platforms: ${{ inputs.unity_platform_name }}
+
+      - name: Setup Swig Env
+        shell: bash
+        run: |
+          echo "$(swig -swiglib)" >> $GITHUB_PATH
+          swig -swiglib
+          echo "SWIG_DIR=$(swig -swiglib)" >> $GITHUB_ENV
+
+      - name: Build SDK (MacOS)
+        timeout-minutes: 120
+        shell: bash
+        run: |
+          if [ -f /usr/local/bin/python3.11 ]; then
+            echo "Removing python3.11"
+            sudo rm -f /usr/local/bin/python3.11
+          else
+            echo "Did not find python3.11"
+          fi
+          # TODO add handling cmake_extras
+          python scripts/build_scripts/build_zips.py --gha --platform=macos --unity_root=$UNITY_ROOT_DIR --use_boringssl --architecture=x86_64 --architecture=arm64 --apis=${{ inputs.apis }}
+
+      - name: Check zip file
+        shell: bash
+        run: |
+          if [ -f macos_unity/*.zip ]; then
+            echo "macos_unity zip created."
+          else
+            echo "Fail to create macos_unity zip."
+            exit 1
+          fi
+
+      - name: Upload Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos_unity
+          path: macos_unity/*.zip
