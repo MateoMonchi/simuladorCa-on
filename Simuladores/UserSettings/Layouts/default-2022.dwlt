@@ -213,8 +213,8 @@ MonoBehaviour:
     y: 0
     width: 372
     height: 652
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -552,7 +552,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 64f9ffff2c4e0000
+      m_ExpandedIDs: 2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1175,7 +1175,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Firebase/Editor
+    - Assets/ExternalDependencyManager/Editor/1.2.185
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1183,16 +1183,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Firebase/Editor
+  - Assets/ExternalDependencyManager/Editor/1.2.185
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Monchi\Downloads\Simuladores-TP1-main\Simuladores-TP1-main\Simuladores
+  m_LastProjectPath: C:\Users\Monchi\OneDrive\Documentos\GitHub\simuladorCa-on\Simuladores
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 26}
-    m_SelectedIDs: e2540000
-    m_LastClickedID: 21730
-    m_ExpandedIDs: 00000000904f0000984f00009a4f0000fc54000000ca9a3bffffff7f
+    m_SelectedIDs: e04f0000
+    m_LastClickedID: 20448
+    m_ExpandedIDs: 000000003e4f0000464f0000484f0000e24f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1220,7 +1220,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000904f0000
+    m_ExpandedIDs: 000000003e4f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1247,7 +1247,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300000873000026820000b4670000ec8c0000206e000080680000747b0000c06b00008468000090680000aa680000986600007c660000ac660000b0660000b4660000b8660000bc660000c0660000387200003c7200004072000044720000487200008e72000092720000967200009a7200009e720000a2720000a6720000aa720000ae720000b2720000b6720000ba720000be720000c2720000c6720000ca720000ce720000d2720000d6720000da720000de720000e2720000e67200008a7f00001a980000aa9400009ca800003ca00000489400005a9f000048980000f2ae00009ec2000014aa0000eed300009ad50000547c0000706d00009478000098780000806d0000c28f00003091000034910000ca90000044770000f08e000066bc00006ca40000d2a30000000000006aa60000f0870000ec870000907700002e740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

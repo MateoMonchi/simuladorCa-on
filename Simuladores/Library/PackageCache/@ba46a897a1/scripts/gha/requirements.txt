@@ -1,7 +1,0 @@
-absl-py
-attrs
-pyyaml
-pytz
-requests
-PyGithub
-packaging

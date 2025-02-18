@@ -121,7 +121,6 @@
 -define:UNITY_XR_VISIONOS_SUPPORTED
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll"

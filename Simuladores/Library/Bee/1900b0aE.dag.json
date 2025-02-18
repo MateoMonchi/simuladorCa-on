@@ -266,8 +266,8 @@
       "DisplayName": "Writing UnityEngine.TestRunner.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
       "PayloadOffset": 107,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.UnityAdditionalFile.txt"
@@ -278,7 +278,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.rsp",
       "DisplayName": "Writing UnityEngine.TestRunner.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 279,
+      "PayloadOffset": 269,
       "PayloadLength": 42545,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
@@ -291,9 +291,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.rsp2",
       "DisplayName": "Writing UnityEngine.TestRunner.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 42918,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 42908,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.rsp2"
@@ -2087,7 +2087,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.dll.mvfrm.rsp",
       "DisplayName": "Writing UnityEngine.TestRunner.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 43113,
+      "PayloadOffset": 43093,
       "PayloadLength": 7355,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -2288,9 +2288,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.UnityAdditionalFile.txt",
       "DisplayName": "Writing UnityEngine.UI.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 50573,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 50553,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.UnityAdditionalFile.txt"
@@ -2301,8 +2301,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.rsp",
       "DisplayName": "Writing UnityEngine.UI.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 50737,
-      "PayloadLength": 37110,
+      "PayloadOffset": 50707,
+      "PayloadLength": 37033,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -2314,9 +2314,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.rsp2",
       "DisplayName": "Writing UnityEngine.UI.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 87933,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 87826,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.rsp2"
@@ -2328,7 +2328,6 @@
       "DisplayName": "Csc UnityEngine.UI",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -2702,7 +2701,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.dll.mvfrm.rsp",
       "DisplayName": "Writing UnityEngine.UI.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 88120,
+      "PayloadOffset": 88003,
       "PayloadLength": 7528,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -2907,9 +2906,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.UnityAdditionalFile.txt",
       "DisplayName": "Writing UnityEditor.TestRunner.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 95761,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 95644,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.UnityAdditionalFile.txt"
@@ -2920,7 +2919,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.rsp",
       "DisplayName": "Writing UnityEditor.TestRunner.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 95933,
+      "PayloadOffset": 95806,
       "PayloadLength": 48614,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
@@ -2933,9 +2932,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.rsp2",
       "DisplayName": "Writing UnityEditor.TestRunner.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 144641,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 144514,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.rsp2"
@@ -3393,7 +3392,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.dll.mvfrm.rsp",
       "DisplayName": "Writing UnityEditor.TestRunner.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 144836,
+      "PayloadOffset": 144699,
       "PayloadLength": 7521,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -3598,9 +3597,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.UnityAdditionalFile.txt",
       "DisplayName": "Writing UnityEditor.UI.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 152462,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 152325,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.UnityAdditionalFile.txt"
@@ -3611,8 +3610,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.rsp",
       "DisplayName": "Writing UnityEditor.UI.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 152626,
-      "PayloadLength": 34164,
+      "PayloadOffset": 152479,
+      "PayloadLength": 34087,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -3624,9 +3623,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.rsp2",
       "DisplayName": "Writing UnityEditor.UI.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 186876,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 186652,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.rsp2"
@@ -3638,7 +3637,6 @@
       "DisplayName": "Csc UnityEditor.UI",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -3981,7 +3979,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.dll.mvfrm.rsp",
       "DisplayName": "Writing UnityEditor.UI.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 187063,
+      "PayloadOffset": 186829,
       "PayloadLength": 7854,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -4194,9 +4192,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.AI.Navigation.Editor.ConversionSystem.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 195051,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 194817,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.UnityAdditionalFile.txt"
@@ -4207,8 +4205,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.rsp",
       "DisplayName": "Writing Unity.AI.Navigation.Editor.ConversionSystem.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 195244,
-      "PayloadLength": 32169,
+      "PayloadOffset": 195000,
+      "PayloadLength": 32092,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -4220,9 +4218,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.rsp2",
       "DisplayName": "Writing Unity.AI.Navigation.Editor.ConversionSystem.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 227528,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 227207,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.rsp2"
@@ -4234,7 +4232,6 @@
       "DisplayName": "Csc Unity.AI.Navigation.Editor.ConversionSystem",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -4533,7 +4530,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.AI.Navigation.Editor.ConversionSystem.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 227744,
+      "PayloadOffset": 227413,
       "PayloadLength": 7930,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -4748,9 +4745,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.AI.Navigation.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 235784,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 235453,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.UnityAdditionalFile.txt"
@@ -4761,8 +4758,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.rsp",
       "DisplayName": "Writing Unity.AI.Navigation.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 235953,
-      "PayloadLength": 30399,
+      "PayloadOffset": 235612,
+      "PayloadLength": 30322,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -4774,9 +4771,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.rsp2",
       "DisplayName": "Writing Unity.AI.Navigation.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 266443,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 266025,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.rsp2"
@@ -4788,7 +4785,6 @@
       "DisplayName": "Csc Unity.AI.Navigation",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -5056,7 +5052,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.AI.Navigation.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 266635,
+      "PayloadOffset": 266207,
       "PayloadLength": 7680,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -5265,9 +5261,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.PlasticSCM.Editor.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 274429,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 274001,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.UnityAdditionalFile.txt"
@@ -5278,7 +5274,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.rsp",
       "DisplayName": "Writing Unity.PlasticSCM.Editor.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 274602,
+      "PayloadOffset": 274164,
       "PayloadLength": 62049,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
@@ -5291,9 +5287,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.rsp2",
       "DisplayName": "Writing Unity.PlasticSCM.Editor.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 336746,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 336308,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.rsp2"
@@ -5860,7 +5856,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.PlasticSCM.Editor.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 336942,
+      "PayloadOffset": 336494,
       "PayloadLength": 7844,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -6073,9 +6069,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.Rider.Editor.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 344895,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 344447,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.UnityAdditionalFile.txt"
@@ -6086,7 +6082,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.rsp",
       "DisplayName": "Writing Unity.Rider.Editor.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 345063,
+      "PayloadOffset": 344605,
       "PayloadLength": 34312,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
@@ -6099,9 +6095,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.rsp2",
       "DisplayName": "Writing Unity.Rider.Editor.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 379465,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 379007,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.rsp2"
@@ -6414,7 +6410,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.Rider.Editor.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 379656,
+      "PayloadOffset": 379188,
       "PayloadLength": 7757,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -6625,9 +6621,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.TextMeshPro.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 387521,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 387053,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.UnityAdditionalFile.txt"
@@ -6638,8 +6634,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.rsp",
       "DisplayName": "Writing Unity.TextMeshPro.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 387688,
-      "PayloadLength": 35235,
+      "PayloadOffset": 387210,
+      "PayloadLength": 35158,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -6651,9 +6647,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.rsp2",
       "DisplayName": "Writing Unity.TextMeshPro.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 423012,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 422457,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.rsp2"
@@ -6665,7 +6661,6 @@
       "DisplayName": "Csc Unity.TextMeshPro",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -6987,7 +6982,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.TextMeshPro.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 423202,
+      "PayloadOffset": 422637,
       "PayloadLength": 7680,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -7196,9 +7191,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.Timeline.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 430987,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 430422,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.UnityAdditionalFile.txt"
@@ -7209,8 +7204,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.rsp",
       "DisplayName": "Writing Unity.Timeline.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 431151,
-      "PayloadLength": 36282,
+      "PayloadOffset": 430576,
+      "PayloadLength": 36205,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -7222,9 +7217,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.rsp2",
       "DisplayName": "Writing Unity.Timeline.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 467519,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 466867,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.rsp2"
@@ -7236,7 +7231,6 @@
       "DisplayName": "Csc Unity.Timeline",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -7572,7 +7566,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.Timeline.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 467706,
+      "PayloadOffset": 467044,
       "PayloadLength": 7680,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -7781,9 +7775,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.VSCode.Editor.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 475496,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 474834,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.UnityAdditionalFile.txt"
@@ -7794,8 +7788,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.rsp",
       "DisplayName": "Writing Unity.VSCode.Editor.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 475665,
-      "PayloadLength": 31948,
+      "PayloadOffset": 474993,
+      "PayloadLength": 31871,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -7807,9 +7801,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.rsp2",
       "DisplayName": "Writing Unity.VSCode.Editor.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 507704,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 506955,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.rsp2"
@@ -7821,7 +7815,6 @@
       "DisplayName": "Csc Unity.VSCode.Editor",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -8101,7 +8094,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.VSCode.Editor.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 507896,
+      "PayloadOffset": 507137,
       "PayloadLength": 7930,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -8316,9 +8309,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.VisualStudio.Editor.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.VisualStudio.Editor.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 515942,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 515183,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualStudio.Editor.UnityAdditionalFile.txt"
@@ -8329,7 +8322,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.VisualStudio.Editor.rsp",
       "DisplayName": "Writing Unity.VisualStudio.Editor.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 516117,
+      "PayloadOffset": 515348,
       "PayloadLength": 34209,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
@@ -8342,9 +8335,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.VisualStudio.Editor.rsp2",
       "DisplayName": "Writing Unity.VisualStudio.Editor.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 550423,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 549654,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualStudio.Editor.rsp2"
@@ -8658,7 +8651,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.VisualStudio.Editor.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.VisualStudio.Editor.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 550621,
+      "PayloadOffset": 549842,
       "PayloadLength": 7757,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -8869,9 +8862,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.AI.Navigation.Editor.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 558495,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 557716,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.UnityAdditionalFile.txt"
@@ -8882,8 +8875,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.rsp",
       "DisplayName": "Writing Unity.AI.Navigation.Editor.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 558671,
-      "PayloadLength": 32245,
+      "PayloadOffset": 557882,
+      "PayloadLength": 32168,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -8895,9 +8888,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.rsp2",
       "DisplayName": "Writing Unity.AI.Navigation.Editor.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 591014,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 590148,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.rsp2"
@@ -8909,7 +8902,6 @@
       "DisplayName": "Csc Unity.AI.Navigation.Editor",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -9231,7 +9223,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.AI.Navigation.Editor.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 591213,
+      "PayloadOffset": 590337,
       "PayloadLength": 8116,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -9450,9 +9442,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.CollabProxy.Editor.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.CollabProxy.Editor.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 599444,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 598568,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.CollabProxy.Editor.UnityAdditionalFile.txt"
@@ -9463,8 +9455,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.CollabProxy.Editor.rsp",
       "DisplayName": "Writing Unity.CollabProxy.Editor.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 599618,
-      "PayloadLength": 31378,
+      "PayloadOffset": 598732,
+      "PayloadLength": 31301,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -9476,9 +9468,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.CollabProxy.Editor.rsp2",
       "DisplayName": "Writing Unity.CollabProxy.Editor.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 631092,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 630129,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.CollabProxy.Editor.rsp2"
@@ -9490,7 +9482,6 @@
       "DisplayName": "Csc Unity.CollabProxy.Editor",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/Unity.CollabProxy.Editor.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/Unity.CollabProxy.Editor.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -9783,7 +9774,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.CollabProxy.Editor.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.CollabProxy.Editor.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 631289,
+      "PayloadOffset": 630316,
       "PayloadLength": 8015,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -10000,9 +9991,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.TextMeshPro.Editor.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 639419,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 638446,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.UnityAdditionalFile.txt"
@@ -10013,8 +10004,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.rsp",
       "DisplayName": "Writing Unity.TextMeshPro.Editor.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 639593,
-      "PayloadLength": 35742,
+      "PayloadOffset": 638610,
+      "PayloadLength": 35665,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -10026,9 +10017,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.rsp2",
       "DisplayName": "Writing Unity.TextMeshPro.Editor.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 675431,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 674371,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.rsp2"
@@ -10040,7 +10031,6 @@
       "DisplayName": "Csc Unity.TextMeshPro.Editor",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -10380,7 +10370,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.TextMeshPro.Editor.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 675628,
+      "PayloadOffset": 674558,
       "PayloadLength": 8009,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -10597,9 +10587,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.Timeline.Editor.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 683749,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 682679,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.UnityAdditionalFile.txt"
@@ -10610,8 +10600,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.rsp",
       "DisplayName": "Writing Unity.Timeline.Editor.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 683920,
-      "PayloadLength": 55582,
+      "PayloadOffset": 682840,
+      "PayloadLength": 55505,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -10623,9 +10613,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.rsp2",
       "DisplayName": "Writing Unity.Timeline.Editor.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 739595,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 738438,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.rsp2"
@@ -10637,7 +10627,6 @@
       "DisplayName": "Csc Unity.Timeline.Editor",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -11201,7 +11190,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.Timeline.Editor.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 739789,
+      "PayloadOffset": 738622,
       "PayloadLength": 8006,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -11418,9 +11407,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.AI.Navigation.Updater.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 747913,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 746746,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.UnityAdditionalFile.txt"
@@ -11431,8 +11420,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.rsp",
       "DisplayName": "Writing Unity.AI.Navigation.Updater.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 748090,
-      "PayloadLength": 31936,
+      "PayloadOffset": 746913,
+      "PayloadLength": 31859,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -11444,9 +11433,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.rsp2",
       "DisplayName": "Writing Unity.AI.Navigation.Updater.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 780125,
-      "PayloadLength": 92,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\Down",
+      "PayloadOffset": 778871,
+      "PayloadLength": 82,
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\Users\\Monchi\\OneD",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.rsp2"
@@ -11458,7 +11447,6 @@
       "DisplayName": "Csc Unity.AI.Navigation.Updater",
       "Action": "\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe\" exec \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/DotNetSdkRoslyn/csc.dll\" /nostdlib /noconfig /shared \"@Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.rsp\" \"@Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.rsp2\"",
       "Inputs": [
-        "Assets/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll",
         "Assets/ExternalDependencyManager/Editor/1.2.185/Google.VersionHandlerImpl.dll",
@@ -11759,7 +11747,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.AI.Navigation.Updater.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 780325,
+      "PayloadOffset": 779061,
       "PayloadLength": 8204,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -11980,9 +11968,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.UnityAdditionalFile.txt",
       "DisplayName": "Writing Assembly-CSharp.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 788635,
-      "PayloadLength": 79,
-      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\Downloads\\Simu",
+      "PayloadOffset": 787371,
+      "PayloadLength": 69,
+      "PayloadDebugContentSnippet": "C:\\Users\\Monchi\\OneDrive\\Docum",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.UnityAdditionalFile.txt"
@@ -11993,7 +11981,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp",
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 788800,
+      "PayloadOffset": 787526,
       "PayloadLength": 30014,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
@@ -12006,7 +11994,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 818901,
+      "PayloadOffset": 817627,
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -12410,7 +12398,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 818997,
+      "PayloadOffset": 817723,
       "PayloadLength": 8353,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -13174,7 +13162,7 @@
     {
       "Annotation": "BuildPlayerDataGenerator Library/BuildPlayerData/Editor/TypeDb-All.json",
       "DisplayName": "BuildPlayerDataGenerator TypeDb-All",
-      "Action": "\"C:/Program Files/Unity 2022.3.18f1/Editor/Data\\Tools\\netcorerun\\netcorerun.exe\" \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Assets\\Firebase\\Plugins\\Firebase.App.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Assets\\Firebase\\Plugins\\Firebase.Auth.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Assets\\Firebase\\Plugins\\Firebase.Database.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Assets\\Firebase\\Plugins\\Firebase.Platform.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Assets\\Firebase\\Plugins\\Firebase.TaskExtension.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Assets\\Firebase\\Plugins\\Google.MiniJson.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Library\\ScriptAssemblies\\Assembly-CSharp.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Library\\ScriptAssemblies\\Unity.AI.Navigation.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Library\\ScriptAssemblies\\Unity.TextMeshPro.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Library\\ScriptAssemblies\\Unity.Timeline.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Library\\ScriptAssemblies\\UnityEngine.TestRunner.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Library\\ScriptAssemblies\\UnityEngine.UI.dll\" -a=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\\nunit.framework.dll\" -s=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Assets\\Firebase\\Plugins\" -s=\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\Managed\\UnityEngine\" -s=\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netfx\" -s=\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netstandard\" -s=\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetStandard\\Extensions\\2.0.0\" -s=\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetStandard\\ref\\2.1.0\" -s=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Library\\ScriptAssemblies\" -s=\"C:\\Users\\Monchi\\Downloads\\Simuladores-TP1-main\\Simuladores-TP1-main\\Simuladores\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
+      "Action": "\"C:/Program Files/Unity 2022.3.18f1/Editor/Data\\Tools\\netcorerun\\netcorerun.exe\" \"C:/Program Files/Unity 2022.3.18f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Assets\\Firebase\\Plugins\\Firebase.App.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Assets\\Firebase\\Plugins\\Firebase.Auth.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Assets\\Firebase\\Plugins\\Firebase.Database.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Assets\\Firebase\\Plugins\\Firebase.Platform.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Assets\\Firebase\\Plugins\\Firebase.TaskExtension.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Assets\\Firebase\\Plugins\\Google.MiniJson.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Library\\ScriptAssemblies\\Assembly-CSharp.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Library\\ScriptAssemblies\\Unity.AI.Navigation.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Library\\ScriptAssemblies\\Unity.TextMeshPro.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Library\\ScriptAssemblies\\Unity.Timeline.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Library\\ScriptAssemblies\\UnityEngine.TestRunner.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Library\\ScriptAssemblies\\UnityEngine.UI.dll\" -a=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\\nunit.framework.dll\" -s=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Assets\\Firebase\\Plugins\" -s=\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\Managed\\UnityEngine\" -s=\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netfx\" -s=\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netstandard\" -s=\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetStandard\\Extensions\\2.0.0\" -s=\"C:\\Program Files\\Unity 2022.3.18f1\\Editor\\Data\\NetStandard\\ref\\2.1.0\" -s=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Library\\ScriptAssemblies\" -s=\"C:\\Users\\Monchi\\OneDrive\\Documentos\\GitHub\\simuladorCa-on\\Simuladores\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
       "Inputs": [
         "C:/Program Files/Unity 2022.3.18f1/Editor/Data/Tools/netcorerun/netcorerun.exe",
         "C:/Program Files/Unity 2022.3.18f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
@@ -13442,6 +13430,6 @@
   "SharedResources": [],
   "Scanners": [],
   "Identifier": "Library/Bee/1900b0aE.dag.json",
-  "PayloadsFile": "C:/Users/Monchi/Downloads/Simuladores-TP1-main/Simuladores-TP1-main/Simuladores/Library/Bee/1900b0aE.dag.payloads",
+  "PayloadsFile": "C:/Users/Monchi/OneDrive/Documentos/GitHub/simuladorCa-on/Simuladores/Library/Bee/1900b0aE.dag.payloads",
   "RelativePathToRoot": "../.."
 }
