@@ -6,16 +6,16 @@ using UnityEngine;
 public class DatabaseManager : MonoBehaviour
 {
     private DatabaseReference dbReference;
-    private bool isFirebaseReady = false; // Verifica si Firebase está listo
+    private bool isFirebaseReady = false; 
 
-    public static DatabaseManager Instance { get; private set; } // Singleton opcional
+    public static DatabaseManager Instance { get; private set; } 
 
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Opcional para mantener Firebase en todas las escenas
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
@@ -32,7 +32,7 @@ public class DatabaseManager : MonoBehaviour
             {
                 FirebaseApp app = FirebaseApp.DefaultInstance;
                 dbReference = FirebaseDatabase.DefaultInstance.RootReference;
-                isFirebaseReady = true; // ✅ Firebase está listo
+                isFirebaseReady = true; 
                 Debug.Log("✅ Firebase inicializado correctamente.");
             }
             else

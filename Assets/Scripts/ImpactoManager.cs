@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Firebase.Extensions;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class ImpactoManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class ImpactoManager : MonoBehaviour
     {
         
     }
-    public void GuardarImpacto(/*float angulo,*/ float masa,/* Vector3 posicion,*/ float velocidad)
+    public void GuardarImpacto( float masa, float posicionX, float posicionY, float velocidad)
     {
         if (firebaseManager == null)
         {
@@ -30,7 +31,7 @@ public class ImpactoManager : MonoBehaviour
         }
 
         string id = dbReference.Child("impactos").Push().Key;
-        ImpactoData nuevoImpacto = new ImpactoData(/*angulo,*/ masa, /*posicion,*/ velocidad);
+        ImpactoData nuevoImpacto = new ImpactoData(masa, posicionX, posicionY, velocidad);
         Debug.Log(ImpactoData.text);
         string json = JsonUtility.ToJson(nuevoImpacto);
 
@@ -49,19 +50,17 @@ public class ImpactoData
 {
     public float angulo;
     public float masa;
-    public float x, y, z;
+    public float x, y;
     public float velocidad;
     public static string text;
 
-    public ImpactoData(/*float angulo,*/ float masa,/* Vector3 posicion,*/ float velocidad)
+    public ImpactoData( float masa, float x, float y, float velocidad)
     {
-        /*this.angulo = angulo;
-        this.masa = masa;
-        this.x = posicion.x;
-        this.y = posicion.y;
-        this.z = posicion.z;*/
         this.velocidad = velocidad;
-        text = $"{angulo}, {masa}, {velocidad}";
+        text = $" {masa}, {velocidad},{x},{y}";
+        this.masa = masa;
+        this.x = x;
+        this.y = y;
     }
 }
 

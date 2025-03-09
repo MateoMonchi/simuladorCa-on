@@ -53,11 +53,23 @@ public class HistorialImpactosUi : MonoBehaviour
                 {
                     string json = impacto.GetRawJsonValue();
                     ImpactoData datos = JsonUtility.FromJson<ImpactoData>(json);
-                    string impactoTexto = $"Ángulo: {datos.angulo}, Fuerza: {datos.masa}, Pos: ({datos.x}, {datos.y}, {datos.z}), Vel: {datos.velocidad}";
-                    impactosLista.Add(impactoTexto);
-                }
+                    string impactoTexto = $"Masa: {datos.masa}, Pos: ({datos.x}, {datos.y}), Vel: {datos.velocidad}";
 
-                historialText.text = string.Join("\n", impactosLista);
+                    int index = impactosLista.FindIndex(imp => imp.Contains($"Ángulo: {datos.angulo}"));
+
+                    if (index != -1)
+                    {
+                        impactosLista[index] = impactoTexto;
+                    }
+                    else
+                    {
+                        impactosLista.Add(impactoTexto);
+                    }
+                }
+                if (impactosLista.Count > 0)
+                {
+                    historialText.text = impactosLista[impactosLista.Count - 1];
+                }
                 Debug.Log(historialText.text);
             }
         });

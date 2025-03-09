@@ -699,6 +699,7 @@ MonoBehaviour:
   mass: 1
   masstext: {fileID: 270696297}
   massslider: {fileID: 1705428893}
+  pointingCannon: {fileID: 1930173344}
 --- !u!136 &203762428
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5759,6 +5760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737cad8501858a94fa67429d82b79dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationX: 0
+  rotationY: 0
   verticalSlider: {fileID: 503673302}
   horizontalSlider: {fileID: 1540826744}
   verticaltext: {fileID: 53286884}

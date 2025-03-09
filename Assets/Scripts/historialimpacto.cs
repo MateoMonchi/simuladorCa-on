@@ -29,7 +29,7 @@ public class historialimpacto : MonoBehaviour
                 {
                     string json = impacto.GetRawJsonValue();
                     ImpactoData datos = JsonUtility.FromJson<ImpactoData>(json);
-                    Debug.Log($"Impacto: Ángulo {datos.angulo}, Fuerza {datos.masa}, Posición ({datos.x}, {datos.y}, {datos.z}), Velocidad {datos.velocidad}");
+                    Debug.Log($"Impacto: Ángulo {datos.angulo}, Fuerza {datos.masa}, Posición ({datos.x}, {datos.y}), Velocidad {datos.velocidad}");
                 }
             }
             else

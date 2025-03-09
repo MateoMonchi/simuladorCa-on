@@ -14,6 +14,7 @@ public class Cannon : MonoBehaviour
     public Text masstext;
     public Slider massslider;
     private ImpactoManager impactoManager;
+    public PointingCannon pointingCannon;
 
     public void Start()
     {
@@ -34,7 +35,7 @@ public class Cannon : MonoBehaviour
             var bullet = Instantiate(spawnobject, spawnpoint.position, spawnpoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = spawnpoint.transform.right * speed;
             bullet.GetComponent<Rigidbody>().mass = mass;
-            impactoManager.GuardarImpacto(mass, speed);
+            impactoManager.GuardarImpacto(mass, pointingCannon.rotationX, pointingCannon.rotationY,speed);
         }
     }
 }

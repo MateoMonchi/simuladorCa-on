@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class PointingCannon : MonoBehaviour
 {
-    private float rotationX;
-    private float rotationY;
+    public float rotationX;
+    public float rotationY;
 
     public Slider verticalSlider;
     public Slider horizontalSlider;
