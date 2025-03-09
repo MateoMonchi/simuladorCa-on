@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "719464243517",
+    "firebase_url": "https://simuladores-9913e-default-rtdb.firebaseio.com",
+    "project_id": "simuladores-9913e",
+    "storage_bucket": "simuladores-9913e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719464243517:android:d430ee0b9d3f459554a554",
+        "android_client_info": {
+          "package_name": "com.simuladores.firebasedb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCePbLrdt-iUMhQ5z9ghODwXDqsFP-n3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
